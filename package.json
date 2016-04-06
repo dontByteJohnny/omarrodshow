@@ -1,0 +1,17 @@
+{
+  "name": "sitio",
+  "version": "1.0.0",
+  "description": "Front",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository" :{ 
+	"type" : "git", 
+	"url" : "https://github.com/dontByteJohnny/omarrodshow"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
