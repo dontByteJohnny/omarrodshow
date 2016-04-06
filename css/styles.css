@@ -1,0 +1,168 @@
+﻿body {
+	font: 100%/1.4 Trebuchet MS,Verdana,Arial,Helvetica,sans-serif;
+	background-color: #000;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no a??r relleno ni m?enes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aqu? en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aqu?e aplicar?n cascada en la lista .nav, a no ser que escriba un selector m?espec?co. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminaci??el margen superior resuelve un problema que origina que los m?enes escapen del bloque contenedor. El margen inferior restante lo mantendr?eparado de los elementos de que le sigan.  */
+	padding-right: 15px;
+	padding-left: 15px; /* la adici??e relleno a los lados del elemento dentro de los bloques, en lugar de en los elementos del bloque propiamente dicho, elimina todas las matem?cas de modelo de cuadro. Un bloque anidado con relleno lateral tambi?puede usarse como m?do alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando est?odeada por un v?ulo */
+	border: none;
+}
+/* ~~ La aplicaci??e estilo a los v?ulos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* a no ser que aplique estilos a los v?ulos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificaci??isual r?da */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionar? un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un rat??*/
+	text-decoration: none;
+	background: #FFFFFF ;
+}
+/* ~~ Este contenedor de anchura fija rodea a todas las dem?bloques ~~ */
+.container {
+	width: 960px;
+	background-color: #FFFFFF;
+	margin: 0 auto; /* el valor autom?co de los lados, unido a la anchura, centra el dise??*/
+}
+/* ~~ No se asigna una anchura al encabezado. Se extender?or toda la anchura del dise??~~ */
+header {
+	background-color: white;
+}
+/* ~~ Estas son las columnas para el dise??~~ 
+
+1) El relleno s??se sit??n la parte superior y/o inferior de los elementos del bloque. Los elementos situados dentro de estos bloques tienen relleno a los lados. Esto le ahorra las "matem?cas de modelo de cuadro". Recuerde que si a?? relleno o borde lateral al bloque propiamente dicho, ?e se a??r? la anchura que defina para crear la anchura *total*. Tambi?puede optar por eliminar el relleno del elemento en el  bloque y colocar un segundo bloque dentro de ?e sin anchura y el relleno necesario para el dise??eseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso a??r un margen, evite colocarlo en el lado hacia el que se produce la flotaci??por ejemplo: un margen derecho en un bloque configurado para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de bloques para los que deba incumplirse esta regla, deber???r una declaraci??display:inline" a la regla del elemento del bloque para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que tambi?se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos bloques de barra lateral podr? apilarse si fuera necesario. Si lo prefiere, ?as pueden cambiarse a ID f?lmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegaci??st? la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en direcci??puesta (todas a la izquierda en lugar de todas a la derecha) y ?as se representar?en orden inverso. No es necesario mover los bloques por el c??o fuente HTML.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 180px;
+	background-color: #EADCAE;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 600px;
+}
+aside {
+	float: left;
+	width: 180px;
+	background-color: #EADCAE;
+	padding: 10px 0;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del ?a de .content ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de p?afo incluida m?arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangr? Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegaci??pueden eliminarse si opta por usar un men??splegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los v?ulos (los dem?se sit??usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegaci??n el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separaci??e los botones  */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurar?e que los v?ulos mantengan el aspecto de bot??ncluso despu?de haber sido visitados  */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al v?ulo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el ?a reaccione a un clic de rat??*/
+	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el bot??ara IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este v?ulo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con rat??omo para los que lo hagan con teclado */
+	background-color: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ El pie de p?na ~~ */
+footer {
+	padding: 10px 0;
+	/*background-color: #bc0404;*/
+	position: relative;/* esto da a IE6 el par?tro hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer d?? terminan las columnas y a contenerlas */
+}
+footer p {
+	margin-left:auto !important;
+	margin-right:auto !important;
+}
+/* ~~ Clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la p?na. El elemento flotante debe preceder al elemento junto al que debe aparecer en la p?na. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la p?na. El elemento flotante debe preceder al elemento junto al que debe aparecer en la p?na. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en elemento <br /> o en un bloque vac?como elemento final tras el ??mo bloque flotante (dentro de .container) si el pie se elimina o se saca fuera de .container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/*Compatibilidad con HTML5: define nuevas etiquetas HTML5 como display:block para que los navegadores sepan c??procesar las etiquetas correctamente. */
+header, section, footer, aside, article, figure {
+	display: block;
+}
+.sarasa {
+	margin-left:auto;
+	margin-right:auto;
+}
+.menuHeader {
+    height: 40px;
+	display: inline-flex;
+	font-size: 20px;
+	width: 100%;
+	margin-top: -6px;
+	/*background: #bc0404;*/
+	background: rgb(204,0,0); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(204,0,0,1) 0%, rgba(188,28,28,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(204,0,0,1)), color-stop(100%,rgba(188,28,28,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#bc1c1c',GradientType=1 ); /* IE6-9 */
+
+}
+.menuHeader a {
+    color: black;
+    font-size:v 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none !important;
+	margin-left:auto;
+	margin-right:auto;
+	width: 100%;
+}
+.menuHeader a div {
+	padding-top: 5px;
+}
+.menuHeader a div p{
+	/*font-weight: bold;*/
+}
+
+
+-->
