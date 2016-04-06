@@ -27,9 +27,10 @@ a:visited {
 	color: #6E6C64;
 	text-decoration: underline;
 }
-a:hover, a:active, a:focus { /* este grupo de selectores proporcionar? un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un rat??*/
+li:hover, li:active, li:focus { /* este grupo de selectores proporcionar? un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un rat??*/
 	text-decoration: none;
 	background: #FFFFFF ;
+        height: 40px;
 }
 /* ~~ Este contenedor de anchura fija rodea a todas las dem?bloques ~~ */
 .container {
@@ -101,6 +102,16 @@ footer {
 	/*background-color: #bc0404;*/
 	position: relative;/* esto da a IE6 el par?tro hasLayout para borrar correctamente */
 	clear: both; /* esta propiedad de borrado fuerza a .container a conocer d?? terminan las columnas y a contenerlas */
+        	/*background: #bc0404;*/
+	background: rgb(204,0,0); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(204,0,0,1) 0%, rgba(188,28,28,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(204,0,0,1)), color-stop(100%,rgba(188,28,28,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(204,0,0,1) 0%,rgba(188,28,28,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#bc1c1c',GradientType=1 ); /* IE6-9 */
+
 }
 footer p {
 	margin-left:auto !important;
@@ -132,7 +143,6 @@ header, section, footer, aside, article, figure {
 }
 .menuHeader {
     height: 40px;
-	display: inline-flex;
 	font-size: 20px;
 	width: 100%;
 	margin-top: -6px;
@@ -162,6 +172,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', end
 }
 .menuHeader a div p{
 	/*font-weight: bold;*/
+}
+#bio p {
+        margin-left: 20px;
 }
 
 
